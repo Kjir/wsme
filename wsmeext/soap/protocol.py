@@ -383,6 +383,8 @@ class SoapProtocol(Protocol):
             return kw
         msg = context.soap_message
         for param in msg:
+            if type(param) is ET._Comment:
+                continue
             name = param.tag[len(self.typenamespace) + 2:]
             arg = context.funcdef.get_arg(name)
             value = fromsoap(arg.datatype, param, {
