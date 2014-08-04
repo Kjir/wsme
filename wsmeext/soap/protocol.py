@@ -323,7 +323,7 @@ class SoapProtocol(Protocol):
     """
     name = 'soap'
     displayname = 'SOAP'
-    content_types = ['application/soap+xml']
+    content_types = ['text/xml']
 
     ns = {
         "soap": "http://www.w3.org/2001/12/soap-envelope",
