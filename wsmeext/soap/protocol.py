@@ -2,7 +2,7 @@
 A SOAP implementation for wsme.
 Parts of the code were taken from the tgwebservices soap implmentation.
 """
-from __future__ import absolute_import
+from __future__ import absolute_import, print_function
 
 import pkg_resources
 import datetime
@@ -381,7 +381,8 @@ class SoapProtocol(Protocol):
             return kw
         msg = context.soap_message
         for param in msg:
-            if type(param) is ET._Comment:
+            # FIX for python2.6 (only for lxml)
+            if use_lxml and isinstance(param, ET._Comment):
                 continue
             name = param.tag[len(self.typenamespace) + 2:]
             arg = context.funcdef.get_arg(name)
