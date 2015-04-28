@@ -15,7 +15,6 @@ import re
 
 content_type = 'text/xml'
 accept_content_types = [
-    content_type,
 ]
 
 time_re = re.compile(r'(?P<h>[0-2][0-9]):(?P<m>[0-5][0-9]):(?P<s>[0-6][0-9])')

@@ -15,7 +15,7 @@ class RestProtocol(Protocol):
     name = 'rest'
     displayname = 'REST'
     dataformats = ['json', 'xml']
-    content_types = ['application/json', 'text/xml']
+    content_types = ['application/json']
 
     def __init__(self, dataformats=None):
         if dataformats is None:
